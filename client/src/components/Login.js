@@ -10,6 +10,7 @@ const Login = (props) => {
     });
 
     const { email, password } = inputs;
+
     const onChange = (e) => {
         setInputs({ ...inputs, [e.target.name]: e.target.value })
     };
@@ -64,6 +65,11 @@ const Login = (props) => {
             </form>
             <p className="text-center my-3">New to Todo-App?
             <Link className="" to="/register"> Create an account</Link>
+            </p>
+            <p className="text-center my-3">Log in using
+            <Link className="btn btn-outline-primary btn-sm" to="/facebook">Facebook</Link>
+            or
+            <Link className="btn btn-outline-danger btn-sm" to="/google">Google</Link>
             </p>
         </Fragment>
     )

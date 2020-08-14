@@ -12,6 +12,9 @@ import Dashboard from './components/dashboard/Dashboard';
 import Login from './components/Login';
 import Register from './components/Register';
 import LandingPage from './components/LandingPage';
+import Facebook from './components/FacebookLogin';
+import Google from './components/GoogleLogin';
+
 
 import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
@@ -51,6 +54,8 @@ function App() {
             <Route exact path="/" render={props => !isAuthenticated ? <LandingPage {...props} /> : <Redirect to="/dashboard" />} />
             <Route exact path="/login" render={props => !isAuthenticated ? <Login {...props} setAuth={setAuth} /> : <Redirect to="/dashboard" />} />
             <Route exact path="/register" render={props => !isAuthenticated ? <Register {...props} setAuth={setAuth} /> : <Redirect to="/login" />} />
+            <Route exact path="/facebook" render={props => !isAuthenticated ? <Facebook {...props} setAuth={setAuth} /> : <Redirect to="/dashboard" />} />
+            <Route exact path="/google" render={props => !isAuthenticated ? <Google {...props} setAuth={setAuth} /> : <Redirect to="/dashboard" />} />
             <Route exact path="/dashboard" render={props => isAuthenticated ? <Dashboard {...props} setAuth={setAuth} /> : <Redirect to="/login" />} />
           </Switch>
         </div>

@@ -1,6 +1,8 @@
 import React, { Fragment, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { toast } from 'react-toastify';
+import Google from './GoogleLogin';
+
 
 
 const Register = (props) => {
@@ -78,6 +80,12 @@ const Register = (props) => {
             </form>
             <p className="text-center my-3">Already have an account?
             <Link className="" to="/login"> Log in</Link>
+            </p>
+            
+            <p className="text-center my-3">Sign up using
+            <Link className="btn btn-outline-primary btn-sm" to="/facebook">Facebook</Link>
+            or
+            <Link className="btn btn-outline-danger btn-sm" to="/google"> Google</Link>
             </p>
         </Fragment>
     )
